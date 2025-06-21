@@ -1,0 +1,30 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path="CleanArchitecture.nuspec" />
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Packages.props" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/PrecioAPP.AspireHost/PrecioAPP.AspireHost.csproj" />
+    <Project Path="src/PrecioAPP.Core/PrecioAPP.Core.csproj" />
+    <Project Path="src/PrecioAPP.Infrastructure/PrecioAPP.Infrastructure.csproj" />
+    <Project Path="src/PrecioAPP.ServiceDefaults/PrecioAPP.ServiceDefaults.csproj" />
+    <Project Path="src/PrecioAPP.UseCases/PrecioAPP.UseCases.csproj" />
+    <Project Path="src/PrecioAPP.Web/PrecioAPP.Web.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/PrecioAPP.FunctionalTests/PrecioAPP.FunctionalTests.csproj">
+      <BuildDependency Project="src/PrecioAPP.Web/PrecioAPP.Web.csproj" />
+    </Project>
+    <Project Path="tests/PrecioAPP.IntegrationTests/PrecioAPP.IntegrationTests.csproj">
+      <BuildDependency Project="src/PrecioAPP.Infrastructure/PrecioAPP.Infrastructure.csproj" />
+    </Project>
+    <Project Path="tests/PrecioAPP.UnitTests/PrecioAPP.UnitTests.csproj" />
+  </Folder>
+</Solution>
