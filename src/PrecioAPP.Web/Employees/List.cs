@@ -23,7 +23,7 @@ public class List(IMediator _mediator) : EndpointWithoutRequest<EmployeeListResp
 
   public override async Task HandleAsync(CancellationToken cancellationToken)
   {
-    Result<IEnumerable<EmployeeDTO>> result = await _mediator.Send(new ListEmployeesQuery(null, null), cancellationToken);
+    var result = await _mediator.Send(new ListEmployeesQuery(null, null), cancellationToken);
 
     if (result.IsSuccess)
     {

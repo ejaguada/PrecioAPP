@@ -1,6 +1,7 @@
 ﻿using PrecioAPP.Core.BusinessAggregate;
 using PrecioAPP.Core.ContributorAggregate;
 using PrecioAPP.Core.EmployeeAggregate;
+using PrecioAPP.Core.ProductAggregate;
 
 namespace PrecioAPP.Infrastructure.Data;
 public class AppDbContext(DbContextOptions<AppDbContext> options,
@@ -13,6 +14,8 @@ public class AppDbContext(DbContextOptions<AppDbContext> options,
   public DbSet<Business> Businesses => Set<Business>();
 
   public DbSet<Employee> Employees => Set<Employee>();
+
+  public DbSet<Product> Products => Set<Product>();
 
   protected override void OnModelCreating(ModelBuilder modelBuilder)
   {

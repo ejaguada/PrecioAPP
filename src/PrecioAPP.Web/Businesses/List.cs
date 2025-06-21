@@ -1,5 +1,4 @@
-﻿using PrecioAPP.UseCases.Contributors;
-using PrecioAPP.UseCases.Businesses;
+﻿using PrecioAPP.UseCases.Businesses;
 using PrecioAPP.UseCases.Businesses.List;
 
 namespace PrecioAPP.Web.Businesses;

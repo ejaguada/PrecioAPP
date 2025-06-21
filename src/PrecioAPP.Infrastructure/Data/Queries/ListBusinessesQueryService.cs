@@ -1,4 +1,4 @@
-using PrecioAPP.UseCases.Businesses.List;
+﻿using PrecioAPP.UseCases.Businesses.List;
 using PrecioAPP.UseCases.Businesses;
 
 namespace PrecioAPP.Infrastructure.Data.Queries;
