@@ -1,4 +1,5 @@
-﻿using PrecioAPP.UseCases.Contributors.Get;
+﻿using PrecioAPP.UseCases.Businesses.Get;
+using PrecioAPP.UseCases.Contributors.Get;
 
 namespace PrecioAPP.Web.Contributors;
 
@@ -20,7 +21,7 @@ public class GetById(IMediator _mediator)
   public override async Task HandleAsync(GetContributorByIdRequest request,
     CancellationToken cancellationToken)
   {
-    var query = new GetContributorQuery(request.ContributorId);
+    var query = new GetBusinessQuery(request.ContributorId);
 
     var result = await _mediator.Send(query, cancellationToken);
 
@@ -32,7 +33,7 @@ public class GetById(IMediator _mediator)
 
     if (result.IsSuccess)
     {
-      Response = new ContributorRecord(result.Value.Id, result.Value.Name, result.Value.PhoneNumber);
+      Response = new ContributorRecord(result.Value.Id, result.Value.Name, result.Value.Phone);
     }
   }
 }

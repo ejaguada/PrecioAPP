@@ -1,4 +1,4 @@
-using PrecioAPP.UseCases.Contributors;
+﻿using PrecioAPP.UseCases.Contributors;
 using PrecioAPP.UseCases.Businesses;
 using PrecioAPP.UseCases.Businesses.List;
 
@@ -26,7 +26,7 @@ public class List(IMediator _mediator) : EndpointWithoutRequest<BusinessListResp
     {
       Response = new BusinessListResponse
       {
-        Businesses = result.Value.Select(c => new BusinessRecord(c.Id, c.Name, c.Description, c.Address, c.Longitude, c.Latitude, c.Phone, c.Email, c.Website, c.LogoURL)).ToList()
+        Businesses = result.Value.Select(c => new BusinessRecord(c.Id, c.Name, c.Description, c.Address, c.Longitude, c.Latitude, c.Email, c.Website, c.LogoURL)).ToList()
       };
     }
   }

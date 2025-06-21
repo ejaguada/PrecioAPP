@@ -1,30 +1,29 @@
-﻿using PrecioAPP.UseCases.Businesses.Get;
-using PrecioAPP.UseCases.Contributors.Get;
-using PrecioAPP.UseCases.Contributors.Update;
+﻿using PrecioAPP.UseCases.Employees.Get;
+using PrecioAPP.UseCases.Employees.Update;
 
-namespace PrecioAPP.Web.Contributors;
+namespace PrecioAPP.Web.Employees;
 
 /// <summary>
-/// Update an existing Contributor.
+/// Update an existing Employee.
 /// </summary>
 /// <remarks>
-/// Update an existing Contributor by providing a fully defined replacement set of values.
+/// Update an existing Employee by providing a fully defined replacement set of values.
 /// See: https://stackoverflow.com/questions/60761955/rest-update-best-practice-put-collection-id-without-id-in-body-vs-put-collecti
 /// </remarks>
 public class Update(IMediator _mediator)
-  : Endpoint<UpdateContributorRequest, UpdateContributorResponse>
+  : Endpoint<UpdateEmployeeRequest, UpdateEmployeeResponse>
 {
   public override void Configure()
   {
-    Put(UpdateContributorRequest.Route);
+    Put(UpdateEmployeeRequest.Route);
     AllowAnonymous();
   }
 
   public override async Task HandleAsync(
-    UpdateContributorRequest request,
+    UpdateEmployeeRequest request,
     CancellationToken cancellationToken)
   {
-    var result = await _mediator.Send(new UpdateBusinessCommand(request.Id, request.Name!), cancellationToken);
+    var result = await _mediator.Send(new UpdateEmployeeCommand(request.EmployeeId, request.FullName!, request.BusinessId, request.Role!), cancellationToken);
 
     if (result.Status == ResultStatus.NotFound)
     {
@@ -32,7 +31,7 @@ public class Update(IMediator _mediator)
       return;
     }
 
-    var query = new GetBusinessQuery(request.ContributorId);
+    var query = new GetEmployeeQuery(request.EmployeeId);
 
     var queryResult = await _mediator.Send(query, cancellationToken);
 
@@ -45,7 +44,7 @@ public class Update(IMediator _mediator)
     if (queryResult.IsSuccess)
     {
       var dto = queryResult.Value;
-      Response = new UpdateContributorResponse(new ContributorRecord(dto.Id, dto.Name, dto.Phone));
+      Response = new UpdateEmployeeResponse(new EmployeeRecord(dto.Id, dto.UserId, dto.FullName, dto.BusinessId, dto.Role));
       return;
     }
   }

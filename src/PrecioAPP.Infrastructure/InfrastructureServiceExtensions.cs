@@ -4,6 +4,7 @@ using PrecioAPP.Infrastructure.Data;
 using PrecioAPP.Infrastructure.Data.Queries;
 using PrecioAPP.UseCases.Businesses.List;
 using PrecioAPP.UseCases.Contributors.List;
+using PrecioAPP.UseCases.Employees.List;
 
 
 namespace PrecioAPP.Infrastructure;
@@ -22,7 +23,8 @@ public static class InfrastructureServiceExtensions
     services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>))
            .AddScoped(typeof(IReadRepository<>), typeof(EfRepository<>))
            .AddScoped<IListContributorsQueryService, ListContributorsQueryService>()
-            .AddScoped<IListBusinessesQueryService, ListBusinessesQueryService>()
+           .AddScoped<IListBusinessesQueryService, ListBusinessesQueryService>()
+           .AddScoped<IListEmployeesQueryService, ListEmployeesQueryService>()
            .AddScoped<IDeleteContributorService, DeleteContributorService>();
 
 

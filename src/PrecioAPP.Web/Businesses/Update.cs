@@ -1,30 +1,29 @@
 ﻿using PrecioAPP.UseCases.Businesses.Get;
-using PrecioAPP.UseCases.Contributors.Get;
-using PrecioAPP.UseCases.Contributors.Update;
+using PrecioAPP.UseCases.Businesses.Update;
 
-namespace PrecioAPP.Web.Contributors;
+namespace PrecioAPP.Web.Businesses;
 
 /// <summary>
-/// Update an existing Contributor.
+/// Update an existing Business.
 /// </summary>
 /// <remarks>
-/// Update an existing Contributor by providing a fully defined replacement set of values.
+/// Update an existing Business by providing a fully defined replacement set of values.
 /// See: https://stackoverflow.com/questions/60761955/rest-update-best-practice-put-collection-id-without-id-in-body-vs-put-collecti
 /// </remarks>
 public class Update(IMediator _mediator)
-  : Endpoint<UpdateContributorRequest, UpdateContributorResponse>
+  : Endpoint<UpdateBusinessRequest, UpdateBusinessResponse>
 {
   public override void Configure()
   {
-    Put(UpdateContributorRequest.Route);
+    Put(UpdateBusinessRequest.Route);
     AllowAnonymous();
   }
 
   public override async Task HandleAsync(
-    UpdateContributorRequest request,
+    UpdateBusinessRequest request,
     CancellationToken cancellationToken)
   {
-    var result = await _mediator.Send(new UpdateBusinessCommand(request.Id, request.Name!), cancellationToken);
+    var result = await _mediator.Send(new UpdateBusinessCommand(request.BusinessId, request.Name!, request.Description!, request.Address!, request.Longitude, request.Latitude, request.Email!, request.Website!, request.LogoURL!), cancellationToken);
 
     if (result.Status == ResultStatus.NotFound)
     {
@@ -32,7 +31,7 @@ public class Update(IMediator _mediator)
       return;
     }
 
-    var query = new GetBusinessQuery(request.ContributorId);
+    var query = new GetBusinessQuery(request.BusinessId);
 
     var queryResult = await _mediator.Send(query, cancellationToken);
 
@@ -45,7 +44,7 @@ public class Update(IMediator _mediator)
     if (queryResult.IsSuccess)
     {
       var dto = queryResult.Value;
-      Response = new UpdateContributorResponse(new ContributorRecord(dto.Id, dto.Name, dto.Phone));
+      Response = new UpdateBusinessResponse(new BusinessRecord(dto.Id, dto.Name, dto.Description, dto.Address, dto.Longitude, dto.Latitude, dto.Email, dto.Website, dto.LogoURL));
       return;
     }
   }

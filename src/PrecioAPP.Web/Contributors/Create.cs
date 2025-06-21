@@ -28,7 +28,7 @@ public class Create(IMediator _mediator)
     CreateContributorRequest request,
     CancellationToken cancellationToken)
   {
-    var result = await _mediator.Send(new CreateContributorCommand(request.Name!,
+    var result = await _mediator.Send(new CreateBusinessCommand(request.Name!,
       request.PhoneNumber), cancellationToken);
 
     if (result.IsSuccess)
