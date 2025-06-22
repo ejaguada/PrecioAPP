@@ -14,7 +14,6 @@ public class Create(IMediator _mediator)
   public override void Configure()
   {
     Post(CreateEmployeeRequest.Route);
-    AllowAnonymous();
     Summary(s =>
     {
       // XML Docs are used by default but are overridden by these properties:

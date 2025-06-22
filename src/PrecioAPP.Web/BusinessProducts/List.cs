@@ -18,7 +18,6 @@ public class List(IMediator _mediator) : EndpointWithoutRequest<BusinessProductL
   public override void Configure()
   {
     Get("/BusinessProducts");
-    AllowAnonymous();
   }
 
   public override async Task HandleAsync(CancellationToken cancellationToken)

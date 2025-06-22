@@ -14,7 +14,6 @@ public class GetById(IMediator _mediator)
   public override void Configure()
   {
     Get(GetBusinessByIdRequest.Route);
-    AllowAnonymous();
   }
 
   public override async Task HandleAsync(GetBusinessByIdRequest request,

@@ -18,7 +18,6 @@ public class List(IMediator _mediator) : EndpointWithoutRequest<EmployeeListResp
   public override void Configure()
   {
     Get("/Employees");
-    AllowAnonymous();
   }
 
   public override async Task HandleAsync(CancellationToken cancellationToken)

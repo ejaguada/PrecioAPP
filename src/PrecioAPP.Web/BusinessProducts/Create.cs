@@ -14,7 +14,6 @@ public class CreateBusinessProductEndpoint(IMediator _mediator)
   public override void Configure()
   {
     Post(CreateBusinessProductRequest.Route);
-    AllowAnonymous();
     Summary(s =>
     {
       // XML Docs are used by default but are overridden by these properties:
