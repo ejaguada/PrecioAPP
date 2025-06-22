@@ -3,6 +3,7 @@ using PrecioAPP.Core.Services;
 using PrecioAPP.Infrastructure.Data;
 using PrecioAPP.Infrastructure.Data.Queries;
 using PrecioAPP.UseCases.Businesses.List;
+using PrecioAPP.UseCases.BusinessProducts.List;
 using PrecioAPP.UseCases.Contributors.List;
 using PrecioAPP.UseCases.Employees.List;
 using PrecioAPP.UseCases.Products.List;
@@ -27,7 +28,8 @@ public static class InfrastructureServiceExtensions
            .AddScoped<IListBusinessesQueryService, ListBusinessesQueryService>()
            .AddScoped<IListEmployeesQueryService, ListEmployeesQueryService>()
            .AddScoped<IListProductsQueryService, ListProductsQueryService>()
-           .AddScoped<IDeleteContributorService, DeleteContributorService>();
+           .AddScoped<IDeleteContributorService, DeleteContributorService>()
+           .AddScoped<IListBusinessProductsQueryService, ListBusinessProductsQueryService>();
 
 
     logger.LogInformation("{Project} services registered", "Infrastructure");
