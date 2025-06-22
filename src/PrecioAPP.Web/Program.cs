@@ -1,6 +1,9 @@
-﻿using PrecioAPP.Web.Configurations;
+﻿using ApuntecaDigital.Backend.Web.Configurations;
+using PrecioAPP.Web.Configurations;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddAuthServices();
 
 builder.Services.AddControllers(); // ControllersWithView if you need Views
 
@@ -29,7 +32,8 @@ builder.Services.AddFastEndpoints()
 builder.AddServiceDefaults();
 
 var app = builder.Build();
-
+app.UseAuthentication();
+app.UseAuthorization();
 await app.UseAppMiddlewareAndSeedDatabase();
 app.MapControllers();
 

@@ -16,14 +16,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\PrecioAPP.Identity\PrecioAPP.Identity.csproj" />
     <ProjectReference Include="..\PrecioAPP.Web\PrecioAPP.Web.csproj" />
   </ItemGroup>
   <ItemGroup>
     <!-- The IsAspireProjectResource attribute tells .NET Aspire to treat this 
         reference as a standard project reference and not attempt to generate
         a metadata file -->
-    <ProjectReference Include="..\PrecioAPP.ServiceDefaults\PrecioAPP.ServiceDefaults.csproj"
-                      IsAspireProjectResource="false" />
+    <ProjectReference Include="..\PrecioAPP.ServiceDefaults\PrecioAPP.ServiceDefaults.csproj" IsAspireProjectResource="false" />
   </ItemGroup>
 
 </Project>
