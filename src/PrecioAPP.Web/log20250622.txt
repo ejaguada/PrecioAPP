@@ -392,3 +392,411 @@ SELECT Id, Name, Description, Address, Longitude, Latitude, Phone, Email, Websit
 2025-06-22 10:09:30.040 -03:00 [INF] Handled ListBusinessesQuery with Ardalis.Result.Result`1[System.Collections.Generic.IEnumerable`1[PrecioAPP.UseCases.Businesses.BusinessDTO]] in 62 ms
 2025-06-22 10:09:30.045 -03:00 [INF] Executed endpoint 'HTTP: GET /Businesses'
 2025-06-22 10:09:30.047 -03:00 [INF] Request finished HTTP/2 GET https://localhost:57679/Businesses - 200 null application/json; charset=utf-8 102.0715ms
+2025-06-22 18:17:56.785 -03:00 [INF] Registered 21 endpoints in 268 milliseconds.
+2025-06-22 18:17:57.142 -03:00 [WRN] No store type was specified for the decimal property 'CurrentPrice' on entity type 'BusinessProduct'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-06-22 18:17:57.142 -03:00 [WRN] No store type was specified for the decimal property 'PreviousPrice' on entity type 'BusinessProduct'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-06-22 18:17:57.333 -03:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-22 18:17:57.349 -03:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-06-22 18:17:57.480 -03:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contributors] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-22 18:17:57.512 -03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2025-06-22 18:17:57.523 -03:00 [INF] User profile is available. Using 'C:\Users\jeagu\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-22 18:17:57.684 -03:00 [INF] Now listening on: https://localhost:63451
+2025-06-22 18:17:57.708 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-22 18:17:57.708 -03:00 [INF] Hosting environment: Development
+2025-06-22 18:17:57.708 -03:00 [INF] Content root path: C:\Users\jeagu\dev\PrecioAPP\src\PrecioAPP.Web
+2025-06-22 18:20:44.511 -03:00 [INF] Registered 21 endpoints in 307 milliseconds.
+2025-06-22 18:20:44.917 -03:00 [WRN] No store type was specified for the decimal property 'CurrentPrice' on entity type 'BusinessProduct'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-06-22 18:20:44.918 -03:00 [WRN] No store type was specified for the decimal property 'PreviousPrice' on entity type 'BusinessProduct'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-06-22 18:20:45.115 -03:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-22 18:20:45.133 -03:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-06-22 18:20:45.266 -03:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contributors] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-22 18:20:45.296 -03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2025-06-22 18:20:45.307 -03:00 [INF] User profile is available. Using 'C:\Users\jeagu\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-22 18:20:45.477 -03:00 [INF] Now listening on: https://localhost:64521
+2025-06-22 18:20:45.500 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-22 18:20:45.500 -03:00 [INF] Hosting environment: Development
+2025-06-22 18:20:45.500 -03:00 [INF] Content root path: C:\Users\jeagu\dev\PrecioAPP\src\PrecioAPP.Web
+2025-06-22 19:15:21.700 -03:00 [INF] Registered 21 endpoints in 390 milliseconds.
+2025-06-22 19:15:22.244 -03:00 [WRN] No store type was specified for the decimal property 'CurrentPrice' on entity type 'BusinessProduct'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-06-22 19:15:22.245 -03:00 [WRN] No store type was specified for the decimal property 'PreviousPrice' on entity type 'BusinessProduct'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-06-22 19:15:22.526 -03:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-22 19:15:22.548 -03:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-06-22 19:15:22.739 -03:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contributors] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-22 19:15:22.787 -03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2025-06-22 19:15:22.806 -03:00 [INF] User profile is available. Using 'C:\Users\jeagu\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-22 19:15:22.990 -03:00 [INF] Now listening on: https://localhost:51969
+2025-06-22 19:15:23.016 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-22 19:15:23.016 -03:00 [INF] Hosting environment: Development
+2025-06-22 19:15:23.016 -03:00 [INF] Content root path: C:\Users\jeagu\dev\PrecioAPP\src\PrecioAPP.Web
+2025-06-22 19:16:38.455 -03:00 [INF] Registered 21 endpoints in 424 milliseconds.
+2025-06-22 19:16:38.874 -03:00 [WRN] No store type was specified for the decimal property 'CurrentPrice' on entity type 'BusinessProduct'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-06-22 19:16:38.874 -03:00 [WRN] No store type was specified for the decimal property 'PreviousPrice' on entity type 'BusinessProduct'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-06-22 19:16:39.067 -03:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-22 19:16:39.086 -03:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-06-22 19:16:39.252 -03:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contributors] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-22 19:16:39.287 -03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2025-06-22 19:16:39.300 -03:00 [INF] User profile is available. Using 'C:\Users\jeagu\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-22 19:16:39.550 -03:00 [INF] Now listening on: https://localhost:52483
+2025-06-22 19:16:39.584 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-22 19:16:39.584 -03:00 [INF] Hosting environment: Development
+2025-06-22 19:16:39.584 -03:00 [INF] Content root path: C:\Users\jeagu\dev\PrecioAPP\src\PrecioAPP.Web
+2025-06-22 19:17:02.844 -03:00 [INF] Registered 21 endpoints in 380 milliseconds.
+2025-06-22 19:17:03.234 -03:00 [WRN] No store type was specified for the decimal property 'CurrentPrice' on entity type 'BusinessProduct'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-06-22 19:17:03.234 -03:00 [WRN] No store type was specified for the decimal property 'PreviousPrice' on entity type 'BusinessProduct'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-06-22 19:17:03.432 -03:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-22 19:17:03.449 -03:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-06-22 19:17:03.600 -03:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contributors] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-22 19:17:03.646 -03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2025-06-22 19:17:03.664 -03:00 [INF] User profile is available. Using 'C:\Users\jeagu\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-22 19:17:03.900 -03:00 [INF] Now listening on: https://localhost:52799
+2025-06-22 19:17:03.927 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-22 19:17:03.927 -03:00 [INF] Hosting environment: Development
+2025-06-22 19:17:03.927 -03:00 [INF] Content root path: C:\Users\jeagu\dev\PrecioAPP\src\PrecioAPP.Web
+2025-06-22 19:17:45.141 -03:00 [INF] Registered 21 endpoints in 367 milliseconds.
+2025-06-22 19:17:45.570 -03:00 [WRN] No store type was specified for the decimal property 'CurrentPrice' on entity type 'BusinessProduct'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-06-22 19:17:45.571 -03:00 [WRN] No store type was specified for the decimal property 'PreviousPrice' on entity type 'BusinessProduct'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-06-22 19:17:45.792 -03:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-22 19:17:45.811 -03:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-06-22 19:17:45.984 -03:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contributors] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-22 19:17:46.044 -03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2025-06-22 19:17:46.067 -03:00 [INF] User profile is available. Using 'C:\Users\jeagu\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-22 19:17:46.288 -03:00 [INF] Now listening on: https://localhost:53072
+2025-06-22 19:17:46.318 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-22 19:17:46.318 -03:00 [INF] Hosting environment: Development
+2025-06-22 19:17:46.318 -03:00 [INF] Content root path: C:\Users\jeagu\dev\PrecioAPP\src\PrecioAPP.Web
+2025-06-22 19:20:49.240 -03:00 [INF] Registered 21 endpoints in 396 milliseconds.
+2025-06-22 19:20:49.686 -03:00 [WRN] No store type was specified for the decimal property 'CurrentPrice' on entity type 'BusinessProduct'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-06-22 19:20:49.686 -03:00 [WRN] No store type was specified for the decimal property 'PreviousPrice' on entity type 'BusinessProduct'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-06-22 19:20:49.880 -03:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-22 19:20:49.896 -03:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-06-22 19:20:50.045 -03:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contributors] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-22 19:20:50.083 -03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2025-06-22 19:20:50.098 -03:00 [INF] User profile is available. Using 'C:\Users\jeagu\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-22 19:20:50.385 -03:00 [INF] Now listening on: https://localhost:54160
+2025-06-22 19:20:50.411 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-22 19:20:50.411 -03:00 [INF] Hosting environment: Development
+2025-06-22 19:20:50.411 -03:00 [INF] Content root path: C:\Users\jeagu\dev\PrecioAPP\src\PrecioAPP.Web
+2025-06-22 19:21:41.611 -03:00 [INF] Registered 21 endpoints in 369 milliseconds.
+2025-06-22 19:21:42.100 -03:00 [WRN] No store type was specified for the decimal property 'CurrentPrice' on entity type 'BusinessProduct'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-06-22 19:21:42.100 -03:00 [WRN] No store type was specified for the decimal property 'PreviousPrice' on entity type 'BusinessProduct'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-06-22 19:21:42.336 -03:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-22 19:21:42.355 -03:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-06-22 19:21:42.514 -03:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contributors] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-22 19:21:42.549 -03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2025-06-22 19:21:42.563 -03:00 [INF] User profile is available. Using 'C:\Users\jeagu\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-22 19:21:42.739 -03:00 [INF] Now listening on: https://localhost:54502
+2025-06-22 19:21:42.770 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-22 19:21:42.770 -03:00 [INF] Hosting environment: Development
+2025-06-22 19:21:42.770 -03:00 [INF] Content root path: C:\Users\jeagu\dev\PrecioAPP\src\PrecioAPP.Web
+2025-06-22 19:23:57.778 -03:00 [INF] Registered 21 endpoints in 455 milliseconds.
+2025-06-22 19:23:58.255 -03:00 [WRN] No store type was specified for the decimal property 'CurrentPrice' on entity type 'BusinessProduct'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-06-22 19:23:58.255 -03:00 [WRN] No store type was specified for the decimal property 'PreviousPrice' on entity type 'BusinessProduct'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-06-22 19:23:58.519 -03:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-22 19:23:58.538 -03:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-06-22 19:23:58.691 -03:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contributors] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-22 19:23:58.729 -03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2025-06-22 19:23:58.745 -03:00 [INF] User profile is available. Using 'C:\Users\jeagu\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-22 19:23:58.989 -03:00 [INF] Now listening on: https://localhost:55349
+2025-06-22 19:23:59.029 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-22 19:23:59.029 -03:00 [INF] Hosting environment: Development
+2025-06-22 19:23:59.029 -03:00 [INF] Content root path: C:\Users\jeagu\dev\PrecioAPP\src\PrecioAPP.Web
+2025-06-22 19:41:34.601 -03:00 [INF] Registered 21 endpoints in 394 milliseconds.
+2025-06-22 19:41:35.051 -03:00 [WRN] No store type was specified for the decimal property 'CurrentPrice' on entity type 'BusinessProduct'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-06-22 19:41:35.052 -03:00 [WRN] No store type was specified for the decimal property 'PreviousPrice' on entity type 'BusinessProduct'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-06-22 19:41:35.485 -03:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-22 19:41:35.501 -03:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-06-22 19:41:35.643 -03:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contributors] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-22 19:41:35.694 -03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2025-06-22 19:41:35.712 -03:00 [INF] User profile is available. Using 'C:\Users\jeagu\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-22 19:41:35.907 -03:00 [INF] Now listening on: https://localhost:61819
+2025-06-22 19:41:35.938 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-22 19:41:35.938 -03:00 [INF] Hosting environment: Development
+2025-06-22 19:41:35.938 -03:00 [INF] Content root path: C:\Users\jeagu\dev\PrecioAPP\src\PrecioAPP.Web
+2025-06-22 19:43:44.709 -03:00 [INF] Registered 21 endpoints in 480 milliseconds.
+2025-06-22 19:43:45.240 -03:00 [WRN] No store type was specified for the decimal property 'CurrentPrice' on entity type 'BusinessProduct'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-06-22 19:43:45.241 -03:00 [WRN] No store type was specified for the decimal property 'PreviousPrice' on entity type 'BusinessProduct'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-06-22 19:43:45.591 -03:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-22 19:43:45.613 -03:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-06-22 19:43:45.785 -03:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contributors] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-22 19:43:45.831 -03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2025-06-22 19:43:45.850 -03:00 [INF] User profile is available. Using 'C:\Users\jeagu\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-22 19:43:46.071 -03:00 [INF] Now listening on: https://localhost:62777
+2025-06-22 19:43:46.108 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-22 19:43:46.109 -03:00 [INF] Hosting environment: Development
+2025-06-22 19:43:46.109 -03:00 [INF] Content root path: C:\Users\jeagu\dev\PrecioAPP\src\PrecioAPP.Web
+2025-06-22 19:50:39.258 -03:00 [INF] Registered 21 endpoints in 488 milliseconds.
+2025-06-22 19:50:39.728 -03:00 [WRN] No store type was specified for the decimal property 'CurrentPrice' on entity type 'BusinessProduct'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-06-22 19:50:39.728 -03:00 [WRN] No store type was specified for the decimal property 'PreviousPrice' on entity type 'BusinessProduct'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-06-22 19:50:39.951 -03:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-22 19:50:39.975 -03:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-06-22 19:50:40.224 -03:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contributors] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-22 19:50:40.262 -03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2025-06-22 19:50:40.277 -03:00 [INF] User profile is available. Using 'C:\Users\jeagu\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-22 19:50:40.469 -03:00 [INF] Now listening on: https://localhost:65196
+2025-06-22 19:50:40.504 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-22 19:50:40.504 -03:00 [INF] Hosting environment: Development
+2025-06-22 19:50:40.504 -03:00 [INF] Content root path: C:\Users\jeagu\dev\PrecioAPP\src\PrecioAPP.Web

@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\PrecioAPP.AdminUI\PrecioAPP.AdminUI\PrecioAPP.AdminUI.csproj" />
     <ProjectReference Include="..\PrecioAPP.Identity\PrecioAPP.Identity.csproj" />
     <ProjectReference Include="..\PrecioAPP.Web\PrecioAPP.Web.csproj" />
   </ItemGroup>

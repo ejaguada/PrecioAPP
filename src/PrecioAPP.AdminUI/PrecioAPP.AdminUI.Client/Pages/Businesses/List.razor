@@ -1,0 +1,81 @@
+﻿@page "/businesses/list"
+<PageTitle>Businesses List</PageTitle>
+@using System.Net.Http.Json
+@using PrecioAPP.Core.BusinessAggregate
+@using MediatR
+@using PrecioAPP.UseCases.Businesses
+@using PrecioAPP.UseCases.Businesses.Get
+@using PrecioAPP.UseCases.Businesses.List
+@inject IMediator Mediator
+
+<MudDataGrid T="BusinessDTO" MultiSelection="true" Items="@Elements" SortMode="SortMode.Multiple" Filterable="true" QuickFilter="@_quickFilter"
+             Hideable="true" RowClick="@RowClicked" RowContextMenuClick="RowRightClicked" SelectedItemsChanged="@SelectedItemsChanged">
+    <ToolBarContent>
+        <MudText Typo="Typo.h6">Businesses List</MudText>
+        <MudSpacer />
+        <MudTextField @bind-Value="_searchString" Placeholder="Search" Adornment="Adornment.Start" Immediate="true"
+                      AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+    </ToolBarContent>
+    <Columns>
+        <SelectColumn T="BusinessDTO" />
+        <PropertyColumn Property="x => x.Name" Title="Name" Sortable="false" Filterable="false" />
+        <PropertyColumn Property="x => x.Description" />
+        <PropertyColumn Property="x => x.Website" />
+        <PropertyColumn Property="x => x.Email" />
+        <PropertyColumn Property="x => x.Phone" />
+    </Columns>
+    <PagerContent>
+        <MudDataGridPager T="BusinessDTO" />
+    </PagerContent>
+</MudDataGrid>
+
+@code {
+
+    private IEnumerable<BusinessDTO> Elements = new List<BusinessDTO>();
+    private string? _searchString;
+    private List<string> _events = new();
+    // quick filter - filter globally across multiple columns with the same input
+    private Func<Business, bool> _quickFilter => x =>
+    {
+        if (string.IsNullOrWhiteSpace(_searchString))
+            return true;
+
+        if (x.Name.Contains(_searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+
+        return false;
+    };
+
+    @code {  
+        protected override async Task OnInitializedAsync()  
+        {  
+            var result = await Mediator.Send(new ListBusinessesQuery(null, null));  
+            if (result.IsSuccess)  
+            {  
+                Elements = result.Value;  
+            }  
+            else  
+            {  
+                // Handle error case, e.g., log or show a message  
+                Elements = Enumerable.Empty<BusinessDTO>();  
+            }  
+        }  
+    }
+
+    // events
+    void RowClicked(DataGridRowClickEventArgs<BusinessDTO> args)
+    {
+        _events.Insert(0, $"Event = RowClick, Index = {args.RowIndex}, Data = {System.Text.Json.JsonSerializer.Serialize(args.Item)}");
+    }
+
+    void RowRightClicked(DataGridRowClickEventArgs<BusinessDTO> args)
+    {
+        _events.Insert(0, $"Event = RowRightClick, Index = {args.RowIndex}, Data = {System.Text.Json.JsonSerializer.Serialize(args.Item)}");
+    }
+
+    void SelectedItemsChanged(HashSet<BusinessDTO> items)
+    {
+        _events.Insert(0, $"Event = SelectedItemsChanged, Data = {System.Text.Json.JsonSerializer.Serialize(items)}");
+    }
+
+}
