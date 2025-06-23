@@ -6,10 +6,12 @@ using Microsoft.Extensions.Configuration;
 using PrecioAPP.AdminUI.Components;
 using PrecioAPP.AdminUI.Services;
 using static System.Net.WebRequestMethods;
+using MudBlazor.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.AddServiceDefaults();
+builder.Services.AddMudServices();
 
 builder.Services.AddScoped<LogOutService>();
 
