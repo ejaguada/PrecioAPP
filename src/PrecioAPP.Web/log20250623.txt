@@ -1,0 +1,56 @@
+2025-06-23 10:22:54.494 -03:00 [INF] Registered 21 endpoints in 1.086 milliseconds.
+2025-06-23 10:22:55.025 -03:00 [WRN] No store type was specified for the decimal property 'CurrentPrice' on entity type 'BusinessProduct'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-06-23 10:22:55.025 -03:00 [WRN] No store type was specified for the decimal property 'PreviousPrice' on entity type 'BusinessProduct'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-06-23 10:22:55.263 -03:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-23 10:22:55.297 -03:00 [INF] Executed DbCommand (30ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-06-23 10:22:55.438 -03:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contributors] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-23 10:22:55.469 -03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2025-06-23 10:22:55.480 -03:00 [INF] User profile is available. Using 'C:\Users\jeagu\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-23 10:22:55.662 -03:00 [INF] Now listening on: https://localhost:62403
+2025-06-23 10:22:55.685 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-23 10:22:55.685 -03:00 [INF] Hosting environment: Development
+2025-06-23 10:22:55.685 -03:00 [INF] Content root path: C:\Users\jeagu\dev\PrecioAPP\src\PrecioAPP.Web
+2025-06-23 10:22:56.172 -03:00 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger - null null
+2025-06-23 10:22:56.308 -03:00 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger - 302 0 null 141.3954ms
+2025-06-23 10:22:56.313 -03:00 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/index.html - null null
+2025-06-23 10:22:56.333 -03:00 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/index.html - 200 null text/html; charset=utf-8 20.1516ms
+2025-06-23 10:22:56.343 -03:00 [INF] Request starting HTTP/2 GET https://localhost:57679/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-23 10:22:56.347 -03:00 [INF] Request finished HTTP/2 GET https://localhost:57679/_framework/aspnetcore-browser-refresh.js - 200 16511 application/javascript; charset=utf-8 4.0782ms
+2025-06-23 10:22:56.363 -03:00 [INF] Request starting HTTP/2 GET https://localhost:57679/_vs/browserLink - null null
+2025-06-23 10:22:56.417 -03:00 [INF] Request finished HTTP/2 GET https://localhost:57679/_vs/browserLink - 200 null text/javascript; charset=UTF-8 54.4985ms
+2025-06-23 10:22:56.442 -03:00 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/v1/swagger.json - null null
+2025-06-23 10:22:56.506 -03:00 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 64.4417ms
+2025-06-23 10:23:01.014 -03:00 [INF] Request starting HTTP/2 GET https://localhost:57679/Employees - null null
+2025-06-23 10:23:01.264 -03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '22/6/2025 14:09:10', Current time (UTC): '23/6/2025 13:23:01'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-06-23 10:23:01.269 -03:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '22/6/2025 14:09:10', Current time (UTC): '23/6/2025 13:23:01'.
+2025-06-23 10:23:01.273 -03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-06-23 10:23:01.277 -03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-23 10:23:01.277 -03:00 [INF] Request finished HTTP/2 GET https://localhost:57679/Employees - 401 0 null 263.242ms
