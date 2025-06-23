@@ -48,16 +48,16 @@ public static class Config
       // Blazor client
       new Client
       {
-        ClientId = "nuxt_client",
+        ClientId = "webapp_admin",
         ClientName = "NUXT Client",
         AllowedGrantTypes = GrantTypes.Code,
         ClientSecrets = new List<Secret> { new Secret("secret".Sha256()) },
         RequirePkce = true,
         RequireClientSecret = false,
         AllowAccessTokensViaBrowser = true,
-        RedirectUris = { "https://localhost:3000/callback" },
-        PostLogoutRedirectUris = { "https://localhost:3000" },
-        AllowedCorsOrigins = { "https://localhost:3000" },
+        RedirectUris = { "https://localhost:7091/signin-oidc" },
+        PostLogoutRedirectUris = { "https://localhost:7091" },
+        AllowedCorsOrigins = { "https://localhost:7091" },
         RequireConsent = false,
         AllowOfflineAccess = true,
         AllowPlainTextPkce = false,
